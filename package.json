@@ -1,0 +1,35 @@
+{
+  "name": "streamflix",
+  "version": "1.0.0",
+  "description": "Plateforme StreamFlix avec Bootstrap 5 et SASS (archi 7-1)",
+  "private": true,
+"scripts": {
+  "sass:dev": "sass scss/style.scss css/style.css --load-path=node_modules --source-map --error-css",
+  "sass:watch": "sass --watch scss/style.scss css/style.css --load-path=node_modules --source-map",
+  "sass:prod": "sass scss/style.scss css/style.css --load-path=node_modules --style=compressed --no-error-css"
+}
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/william7865/StreamFlix.git"
+  },
+  "keywords": [
+    "streamflix",
+    "bootstrap",
+    "sass",
+    "streaming",
+    "html5"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/william7865/StreamFlix/issues"
+  },
+  "homepage": "https://github.com/william7865/StreamFlix#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}

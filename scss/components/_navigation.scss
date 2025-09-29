@@ -1,0 +1,4 @@
+.nav-link { color: $text-light; }
+.nav-link.active { color: #fff; font-weight: 700; }
+.navbar-toggler { border-color: rgba(255,255,255,.25); }
+.navbar-toggler:focus-visible { @include focus-ring(); }

@@ -1,0 +1,10 @@
+.hero-bg {
+    max-height: 70vh;
+    aspect-ratio: 16/9;
+  }
+  .hero-overlay {
+    @include gradient-overlay(rgba(0,0,0,.75), rgba(0,0,0,.25));
+    pointer-events: none;
+  }
+  .btn:focus-visible { @include focus-ring(); }
+  
