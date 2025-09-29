@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>StreamFlix — Accueil</title>
     <meta name="description" content="StreamFlix : films et séries en streaming. Découvrez les tendances, vos recommandations et les nouveautés.">
-    <link rel="canonical" href="index.html" />
-    <link rel="icon" href="images/logo.png" type="image/png" />
+    <meta name="keywords" content="StreamFlix, streaming, films, séries, recommandations, tendances">
+    <meta name="author" content="StreamFlix">
 
-    <!-- Bootstrap 5.3+ (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-3Vx5j3Eo+..." crossorigin="anonymous">
-    <!-- Ton CSS compilé depuis SASS -->
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <meta property="og:title" content="StreamFlix — Accueil">
-    <meta property="og:description" content="Découvrez les tendances, vos recommandations et les nouveautés.">
-    <meta property="og:image" content="images/hero-bg.jpg">
+    <!-- Ton JS -->
+    <script src="js/script.js" defer></script>
   </head>
 
   <body class="bg-body text-body">
-    <a href="#contenu" class="position-absolute start-0 top-0 m-3 btn btn-outline-light visually-hidden-focusable">Aller au contenu</a>
+    <a href="#contenu" class="visually-hidden-focusable position-absolute start-0 top-0 m-3 btn btn-outline-light">Aller au contenu</a>
 
     <!-- HEADER / NAVBAR -->
     <header id="haut" class="sticky-top">
       <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
         <div class="container">
-          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="StreamFlix — retour à l’accueil">
-            <img src="images/logo.png" alt="Logo StreamFlix" width="32" height="32" class="rounded">
-            <span class="fw-bold">StreamFlix</span>
+          <a class="navbar-brand text-primary fw-bold" href="index.html" aria-label="StreamFlix — retour à l'accueil">
+            StreamFlix
           </a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -37,26 +34,23 @@
 
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Accueil</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Films</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Ma Liste</a></li>
             </ul>
 
-            <!-- Recherche -->
             <form role="search" class="d-flex me-3" action="#" method="get" aria-label="Recherche de contenu">
               <label for="q" class="visually-hidden">Rechercher</label>
-              <input id="q" name="q" class="form-control me-2" type="search" placeholder="Titre, genre, acteur…" minlength="2" required aria-describedby="search-help">
+              <input id="q" name="q" type="search" class="form-control me-2" placeholder="Titre, genre, acteur…" minlength="2" required>
               <button class="btn btn-primary" type="submit">Chercher</button>
             </form>
-            <span id="search-help" class="visually-hidden">Saisissez au moins 2 caractères.</span>
 
-            <!-- Profil -->
             <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle" type="button" id="menuProfil" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle" type="button" id="profilMenu" data-bs-toggle="dropdown" aria-expanded="false">
                 Profil
               </button>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuProfil">
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profilMenu">
                 <li><a class="dropdown-item" href="#">Mon compte</a></li>
                 <li><a class="dropdown-item" href="#">Paramètres</a></li>
                 <li><hr class="dropdown-divider"></li>
@@ -68,286 +62,148 @@
       </nav>
     </header>
 
+    <!-- MAIN -->
     <main id="contenu">
+      <h1 class="visually-hidden">StreamFlix — Accueil</h1>
+
       <!-- HERO -->
       <section class="position-relative overflow-hidden">
-        <!-- image de fond -->
-        <img src="images/hero-bg.jpg" class="w-100 object-fit-cover hero-bg" alt="Affiche d’Inception : silhouette devant une ville déformée" />
-        <!-- overlay -->
+        <img src="images/films/inception.webp" class="w-100 object-fit-cover hero-bg" alt="Bannière du film Inception">
         <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay"></div>
 
         <div class="container position-relative py-5">
           <div class="row align-items-center">
             <div class="col-12 col-lg-7">
-              <h1 class="display-5 fw-bold mb-3">Inception</h1>
+              <h2 class="display-5 fw-bold mb-3">Inception</h2>
               <p class="lead mb-4">Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.</p>
 
-              <ul class="list-inline text-muted mb-4" aria-label="Métadonnées du film Inception">
+              <ul class="list-inline text-muted mb-4">
                 <li class="list-inline-item">2010</li>
                 <li class="list-inline-item">• 2h28</li>
-                <li class="list-inline-item">• <span class="fw-semibold" data-bs-toggle="tooltip" title="Note utilisateurs">4,5/5</span></li>
-                <li class="list-inline-item">•
-                  <span class="badge text-bg-info me-1">Sci-Fi</span>
-                  <span class="badge text-bg-info">Thriller</span>
-                </li>
+                <li class="list-inline-item">• <span class="fw-semibold">4,5/5</span></li>
+                <li class="list-inline-item">• <span class="badge text-bg-info">Sci-Fi</span> <span class="badge text-bg-info">Thriller</span></li>
               </ul>
 
-              <div class="d-flex gap-2 flex-wrap">
-                <button type="button" class="btn btn-primary btn-lg">
-                  ▶ Lecture
-                </button>
-
-                <button type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modalInception">
-                  Plus d’infos
-                </button>
-
-                <button type="button" class="btn btn-outline-secondary btn-lg">
-                  + Ma Liste
-                </button>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary btn-lg">▶ Lecture</button>
+                <button class="btn btn-outline-light btn-lg">ℹ Plus d'infos</button>
+                <button class="btn btn-outline-secondary btn-lg">+ Ma Liste</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MODAL Plus d’infos (Bootstrap component) -->
-      <div class="modal fade" id="modalInception" tabindex="-1" aria-labelledby="modalInceptionLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title fs-5" id="modalInceptionLabel">Inception — Détails</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-            </div>
-            <div class="modal-body">
-              <p>Année : 2010 — Durée : 2h28 — Note : 4,5/5</p>
-              <p>Genres :
-                <span class="badge text-bg-secondary">Sci-Fi</span>
-                <span class="badge text-bg-secondary">Thriller</span>
-              </p>
-              <p>Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              <button type="button" class="btn btn-primary">▶ Lecture</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TENDANCES -->
+      <!-- SECTION : Tendances -->
       <section class="py-5">
         <div class="container">
-          <h2 class="h3 mb-4">Tendances actuelles</h2>
-          <div class="row g-4">
-            <!-- Card 1 -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/dark-knight.jpg" class="card-img-top" alt="Affiche de The Dark Knight">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">The Dark Knight</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2008 • 2h32</li>
-                    <li>Note : <span class="fw-semibold">4,8/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Action</span>
-                    <span class="badge text-bg-secondary">Crime</span>
-                    <span class="badge text-bg-secondary">Drama</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/interstellar.jpg" class="card-img-top" alt="Affiche de Interstellar">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Interstellar</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2014 • 2h49</li>
-                    <li>Note : <span class="fw-semibold">4,7/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Sci-Fi</span>
-                    <span class="badge text-bg-secondary">Drama</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/pulp-fiction.jpg" class="card-img-top" alt="Affiche de Pulp Fiction">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Pulp Fiction</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>1994 • 2h34</li>
-                    <li>Note : <span class="fw-semibold">4,6/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Crime</span>
-                    <span class="badge text-bg-secondary">Drama</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h3 mb-0">Tendances actuelles</h2>
+            <div class="btn-group" role="group" aria-label="Contrôles section">
+              <button class="btn btn-outline-light btn-sm" aria-label="Précédent">‹</button>
+              <button class="btn btn-outline-light btn-sm" aria-label="Suivant">›</button>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- RECOMMANDÉS -->
-      <section class="py-5">
-        <div class="container">
-          <h2 class="h3 mb-4">Recommandés pour vous</h2>
           <div class="row g-4">
-            <!-- Inception -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/inception.jpg" class="card-img-top" alt="Affiche de Inception">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Inception</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2010 • 2h28</li>
-                    <li>Note : <span class="fw-semibold">4,5/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Sci-Fi</span>
-                    <span class="badge text-bg-secondary">Thriller</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- Matrix -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/matrix.jpg" class="card-img-top" alt="Affiche de The Matrix">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">The Matrix</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>1999 • 2h16</li>
-                    <li>Note : <span class="fw-semibold">4,5/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Action</span>
-                    <span class="badge text-bg-secondary">Sci-Fi</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- Forrest Gump -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/forrest-gump.jpg" class="card-img-top" alt="Affiche de Forrest Gump">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Forrest Gump</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>1994 • 2h22</li>
-                    <li>Note : <span class="fw-semibold">4,4/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Drama</span>
-                    <span class="badge text-bg-secondary">Romance</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- NOUVEAUTÉS -->
-      <section class="py-5">
-        <div class="container">
-          <h2 class="h3 mb-4">Nouveautés</h2>
-          <div class="row g-4">
-            <!-- Interstellar -->
-            <div class="col-12 col-sm-6 col-md-4">
-              <article class="card h-100 shadow-sm">
-                <img src="images/films/interstellar.jpg" class="card-img-top" alt="Affiche de Interstellar">
-                <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Interstellar</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2014 • 2h49</li>
-                    <li>Note : <span class="fw-semibold">4,7/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Sci-Fi</span>
-                    <span class="badge text-bg-secondary">Drama</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
-                  </div>
-                </div>
-              </article>
-            </div>
             <!-- Dark Knight -->
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-6 col-md-4 col-xl-3">
               <article class="card h-100 shadow-sm">
-                <img src="images/films/dark-knight.jpg" class="card-img-top" alt="Affiche de The Dark Knight">
+                <img src="images/films/darknight.webp" class="card-img-top" alt="Affiche de The Dark Knight">
                 <div class="card-body">
-                  <h3 class="h5 card-title mb-2">The Dark Knight</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2008 • 2h32</li>
-                    <li>Note : <span class="fw-semibold">4,8/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Action</span>
-                    <span class="badge text-bg-secondary">Crime</span>
-                    <span class="badge text-bg-secondary">Drama</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
+                  <h3 class="card-title h5 mb-2">The Dark Knight</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>2008</span>
+                    <span>★ 4,8/5</span>
                   </div>
                 </div>
               </article>
             </div>
-            <!-- Inception -->
-            <div class="col-12 col-sm-6 col-md-4">
+
+            <!-- Interstellar -->
+            <div class="col-6 col-md-4 col-xl-3">
               <article class="card h-100 shadow-sm">
-                <img src="images/films/inception.jpg" class="card-img-top" alt="Affiche de Inception">
+                <img src="images/films/Interstellar_film_poster.jpg" class="card-img-top" alt="Affiche de Interstellar">
                 <div class="card-body">
-                  <h3 class="h5 card-title mb-2">Inception</h3>
-                  <ul class="list-unstyled small text-muted mb-3">
-                    <li>2010 • 2h28</li>
-                    <li>Note : <span class="fw-semibold">4,5/5</span></li>
-                  </ul>
-                  <div class="d-flex gap-1 mb-3">
-                    <span class="badge text-bg-secondary">Sci-Fi</span>
-                    <span class="badge text-bg-secondary">Thriller</span>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-primary">▶ Lecture</a>
-                    <a href="#" class="btn btn-sm btn-outline-light">Plus d’infos</a>
+                  <h3 class="card-title h5 mb-2">Interstellar</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>2014</span>
+                    <span>★ 4,7/5</span>
                   </div>
                 </div>
               </article>
             </div>
+
+            <!-- Pulp Fiction -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <article class="card h-100 shadow-sm">
+                <img src="images/films/pulp_fiction.jpg" class="card-img-top" alt="Affiche de Pulp Fiction">
+                <div class="card-body">
+                  <h3 class="card-title h5 mb-2">Pulp Fiction</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>1994</span>
+                    <span>★ 4,6/5</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Matrix -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <article class="card h-100 shadow-sm">
+                <img src="images/films/matrix.jpeg" class="card-img-top" alt="Affiche de The Matrix">
+                <div class="card-body">
+                  <h3 class="card-title h5 mb-2">The Matrix</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>1999</span>
+                    <span>★ 4,5/5</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Forrest Gump -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <article class="card h-100 shadow-sm">
+                <img src="images/films/forrest_gump.jpg" class="card-img-top" alt="Affiche de Forrest Gump">
+                <div class="card-body">
+                  <h3 class="card-title h5 mb-2">Forrest Gump</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>1994</span>
+                    <span>★ 4,4/5</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Inception (reco) -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <article class="card h-100 shadow-sm">
+                <img src="images/films/inception.webp" class="card-img-top" alt="Affiche de Inception">
+                <div class="card-body">
+                  <h3 class="card-title h5 mb-2">Inception</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>2010</span>
+                    <span>★ 4,5/5</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Dune (démo nouveauté) -->
+            <div class="col-6 col-md-4 col-xl-3">
+              <article class="card h-100 shadow-sm">
+                <img src="https://source.unsplash.com/random/300x450/?movie,sand" class="card-img-top" alt="Affiche de Dune: Part Two">
+                <div class="card-body">
+                  <h3 class="card-title h5 mb-2">Dune: Part Two</h3>
+                  <div class="d-flex justify-content-between small text-muted">
+                    <span>2024</span>
+                    <span>★ 4,6/5</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
           </div>
         </div>
       </section>
@@ -357,43 +213,72 @@
     <footer class="border-top py-5">
       <div class="container">
         <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <h2 class="h6">Liens utiles</h2>
+          <div class="col-12 col-md-3">
+            <h2 class="h6">Navigation</h2>
             <ul class="list-unstyled">
-              <li><a class="link-light" href="#">Aide</a></li>
-              <li><a class="link-light" href="#">Contact</a></li>
-              <li><a class="link-light" href="#">Mentions légales</a></li>
-              <li><a class="link-light" href="#">Conditions d’utilisation</a></li>
+              <li><a class="link-light" href="#">Accueil</a></li>
+              <li><a class="link-light" href="#">Films</a></li>
+              <li><a class="link-light" href="#">Nouveautés</a></li>
+              <li><a class="link-light" href="#">Ma Liste</a></li>
             </ul>
           </div>
-          <div class="col-12 col-md-4">
+
+          <div class="col-12 col-md-3">
+            <h2 class="h6">Aide & Support</h2>
+            <ul class="list-unstyled">
+              <li><a class="link-light" href="#">Centre d'aide</a></li>
+              <li><a class="link-light" href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <h2 class="h6">Légal</h2>
+            <ul class="list-unstyled">
+              <li><a class="link-light" href="#">Conditions d'utilisation</a></li>
+              <li><a class="link-light" href="#">Politique de confidentialité</a></li>
+              <li><a class="link-light" href="#">Mentions légales</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-3">
             <h2 class="h6">Newsletter</h2>
+            <p class="text-muted small">Recevez les dernières actualités et recommandations.</p>
             <form class="row gy-2" action="#" method="post" aria-describedby="newsletter-help">
               <div class="col-12">
                 <label for="email" class="form-label">Adresse e-mail</label>
-                <input id="email" name="email" type="email" class="form-control" placeholder="votre@email.fr" required>
+                <input id="email" name="email" type="email" class="form-control" placeholder="Votre adresse e-mail" required>
               </div>
               <div class="col-12 form-check">
-                <input id="consent" name="consent" type="checkbox" class="form-check-input" required>
-                <label for="consent" class="form-check-label">J’accepte de recevoir des e-mails de StreamFlix.</label>
+                <input id="consent" type="checkbox" class="form-check-input" required>
+                <label for="consent" class="form-check-label">J'accepte de recevoir des e-mails de StreamFlix</label>
               </div>
               <div class="col-12">
-                <button class="btn btn-primary">M’inscrire</button>
+                <button class="btn btn-primary w-100">S'inscrire</button>
               </div>
-              <p id="newsletter-help" class="text-muted small mb-0">Nous n’utiliserons votre e-mail que pour vous envoyer des actualités StreamFlix.</p>
+              <p id="newsletter-help" class="text-muted small mb-0">Nous n'utiliserons votre e-mail que pour vous envoyer des actualités StreamFlix.</p>
             </form>
-          </div>
-          <div class="col-12 col-md-4">
-            <h2 class="h6">Réseaux sociaux</h2>
-            <div class="d-flex gap-3">
-              <a class="btn btn-outline-light btn-sm" href="#" rel="nofollow noopener">Facebook</a>
-              <a class="btn btn-outline-light btn-sm" href="#" rel="nofollow noopener">Twitter</a>
-              <a class="btn btn-outline-light btn-sm" href="#" rel="nofollow noopener">Instagram</a>
+
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook">f</a>
+              <a href="#" class="btn btn-outline-light btn-sm" aria-label="Twitter">t</a>
+              <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram">i</a>
+              <a href="#" class="btn btn-outline-light btn-sm" aria-label="YouTube">y</a>
             </div>
           </div>
         </div>
-        <p class="mt-4 mb-0 text-center text-muted">&copy; 2025 StreamFlix. Tous droits réservés.</p>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center pt-4 mt-4 border-top">
+          <p class="mb-0 text-muted small">&copy; 2025 StreamFlix. Tous droits réservés.</p>
+          <div class="d-flex gap-3 small">
+            <a class="link-light" href="#">Confidentialité</a>
+            <a class="link-light" href="#">Cookies</a>
+            <a class="link-light" href="#">Mentions légales</a>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <!-- Bootstrap JS (nécessaire pour la navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   </body>
 </html>

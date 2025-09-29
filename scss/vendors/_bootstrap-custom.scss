@@ -1,17 +1,14 @@
 @use "../utils/variables" as *;
 
-// Import unique de Bootstrap avec overrides (nécessite --load-path=node_modules)
 @use "bootstrap/scss/bootstrap" with (
-  $primary: $primary-red,
-  $secondary: $secondary-gray,
-  $info: $accent-blue,
-  $body-bg: $primary-dark,
-  $body-color: $text-light,
-  $link-color: $text-light,
-  $border-radius: .6rem,
-  $btn-border-radius: .6rem,
-  $card-bg: #2a2626,
-  $card-border-color: rgba(255,255,255,.08),
-  $navbar-padding-y: .75rem,
+  $primary: $primary,
+  $secondary: $secondary,
+  $body-bg: $body-bg,
+  $body-color: $body-color,
+  $link-color: $link-color,
+  $border-radius: $border-radius,
+  $btn-border-radius: $btn-border-radius,
+  $card-bg: $card-bg,
+  $card-border-color: $card-border-color,
   $enable-rounded: true
 );

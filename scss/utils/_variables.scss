@@ -1,27 +1,22 @@
-// Palette StreamFlix
 $primary-red: #e50914;
-$primary-dark: #221f1f;
-$secondary-gray: #564d4d;
-$text-light: #ffffff;
-$text-muted: #999999;
-$accent-blue: #0071eb;
+$primary-red-dark: #b20710;
+$primary-dark: #141414;
+$dark-light: #1f1f1f;
+$gray-600: #404040;
+$light-100: #f5f5f5;
+$white: #ffffff;
 
-// Typo
-$font-primary: 'Netflix Sans', 'Helvetica Neue', sans-serif;
-$font-secondary: 'Arial', sans-serif;
-$font-size-base: 16px;
-$font-size-large: 24px;
-$font-size-small: 14px;
+$font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 $primary: $primary-red;
-$secondary: $secondary-gray;
-$info: $accent-blue;
+$secondary: $gray-600;
 $body-bg: $primary-dark;
-$body-color: $text-light;
-$link-color: $text-light;
-$border-radius: .6rem;
-$btn-border-radius: .6rem;
-$card-bg: #2a2626;
+$body-color: $white;
+$link-color: $white;
+$border-radius: .5rem;
+$btn-border-radius: .5rem;
+$card-bg: #1f1f1f;
 $card-border-color: rgba(255,255,255,.08);
-$navbar-padding-y: .75rem;
-$enable-rounded: true;
+
+$shadow-strong: 0 10px 30px rgba(0,0,0,.5);
+$radius: .5rem;

@@ -1,2 +1,3 @@
-.navbar-brand img { filter: drop-shadow(0 0 8px rgba(0,0,0,.4)); }
-.navbar .dropdown-menu { background-color: $card-bg; border-color: $card-border-color; }
+.site-header {
+    .navbar { transition: .3s ease; }
+  }  

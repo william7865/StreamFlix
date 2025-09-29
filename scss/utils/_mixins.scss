@@ -1,9 +1,8 @@
-@mixin focus-ring($color: rgba(0,113,235,.5)) {
+@mixin focus-ring($c: rgba(0,113,235,.5)) {
     outline: none;
-    box-shadow: 0 0 0 .25rem $color;
+    box-shadow: 0 0 0 .25rem $c;
   }
   
-  @mixin gradient-overlay($from: rgba(0,0,0,.7), $to: rgba(0,0,0,.2)) {
-    background: linear-gradient(180deg, $from 0%, $to 100%);
-  }
-  
+  @mixin hero-gradient($from: rgba(0,0,0,.8), $mid: rgba(0,0,0,0), $to: rgba(0,0,0,.3)) {
+    background: linear-gradient(to right, $from 0%, $mid 50%, $to 100%);
+  }  

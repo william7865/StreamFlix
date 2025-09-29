@@ -1,7 +1,15 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
 .btn-primary {
-    // renforce l’identité StreamFlix
-    background-color: $primary-red;
-    border-color: $primary-red;
-  }
-  .btn-outline-light:hover { color: #000; background-color:#fff; }
-  
+  background-color: v.$primary-red;
+  border-color: v.$primary-red;
+  &:hover { background-color: v.$primary-red-dark; border-color: v.$primary-red-dark; }
+  &:focus-visible { @include m.focus-ring(); }
+}
+.btn-secondary {
+  background-color: v.$gray-600;
+  border-color: v.$gray-600;
+  &:hover { background-color: darken(v.$gray-600, 10%); border-color: darken(v.$gray-600, 10%); }
+  &:focus-visible { @include m.focus-ring(); }
+}

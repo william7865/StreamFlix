@@ -1,8 +1,8 @@
-// 1) Utils d’abord
+// 1) Utils
 @use "utils/variables" as *;
 @use "utils/mixins" as *;
 
-// 2) Vendors (Bootstrap personnalisé)
+// 2) Vendors (Bootstrap personnalisé via variables ci-dessus)
 @use "vendors/bootstrap-custom";
 
 // 3) Base

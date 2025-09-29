@@ -7,8 +7,7 @@
   "sass:dev": "sass scss/style.scss css/style.css --load-path=node_modules --source-map --error-css",
   "sass:watch": "sass --watch scss/style.scss css/style.css --load-path=node_modules --source-map",
   "sass:prod": "sass scss/style.scss css/style.css --load-path=node_modules --style=compressed --no-error-css"
-}
-,
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/william7865/StreamFlix.git"
