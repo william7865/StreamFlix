@@ -1,23 +1,12 @@
-// 1) Utils
 @use "utils/variables" as *;
 @use "utils/mixins" as *;
-
-// 2) Vendors (Bootstrap personnalisé via variables ci-dessus)
 @use "vendors/bootstrap-custom";
-
-// 3) Base
 @use "base/reset";
 @use "base/typography";
-
-// 4) Layout
 @use "layout/header";
 @use "layout/hero";
 @use "layout/footer";
-
-// 5) Components
 @use "components/buttons";
 @use "components/cards";
 @use "components/navigation";
-
-// 6) Pages
 @use "pages/home";
