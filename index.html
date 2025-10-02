@@ -1,310 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamFlix — Accueil</title>
-    <meta name="description" content="StreamFlix : films et séries en streaming. Découvrez les tendances, vos recommandations et les nouveautés.">
-    <meta name="keywords" content="StreamFlix, streaming, films, séries, recommandations, tendances">
-    <meta name="author" content="StreamFlix">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamFlix — Accueil</title>
+  <meta name="description" content="StreamFlix : films et séries en streaming. Découvrez les tendances, vos recommandations et les nouveautés." />
+  <meta name="keywords" content="StreamFlix, streaming, films, séries, recommandations, tendances" />
+  <meta name="author" content="StreamFlix" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header id="haut" class="site-header">
-        <div class="brand-area">
-            <a href="#" class="logo" aria-label="StreamFlix — retour à l'accueil">
-                <span>StreamFlix</span>
-            </a>
+  <header id="haut" class="site-header">
+    <div class="brand-area">
+      <a href="#" class="logo" aria-label="StreamFlix — retour à l'accueil">
+        <span>StreamFlix</span>
+      </a>
+    </div>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#" aria-current="page">Accueil</a></li>
+        <li><a href="#">Films</a></li>
+        <li><a href="#">Séries</a></li>
+        <li><a href="#">Ma Liste</a></li>
+      </ul>
+    </nav>
+
+    <div class="user-area">
+      <button class="search-toggle" aria-label="Rechercher">🔍</button>
+      <form class="search-form" action="#" method="get" aria-label="Recherche de contenu">
+        <input type="search" placeholder="Titre, genre, acteur..." required minlength="2" />
+        <button type="submit" style="display:none">Chercher</button>
+      </form>
+
+      <details class="profile-menu">
+        <summary><span>Profil</span></summary>
+        <ul role="menu" aria-label="Menu du profil">
+          <li><a href="#">Mon compte</a></li>
+          <li><a href="#">Paramètres</a></li>
+          <li><a href="#">Se déconnecter</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- Statut API -->
+    <div id="loader" role="status" aria-live="polite" style="display:none"></div>
+    <div id="error" role="alert"></div>
+
+    <h1 class="sr-only">StreamFlix — Accueil</h1>
+
+    <!-- HERO (injecté par l'API) -->
+    <section id="hero" class="hero" aria-labelledby="hero-title" role="region">
+      <img class="hero-background" src="" alt="" />
+      <div class="hero-content">
+        <h2 id="hero-title"></h2>
+        <p class="hero-description"></p>
+        <ul class="hero-meta" aria-label="Métadonnées du film"></ul>
+        <div class="hero-actions" aria-label="Actions principales">
+          <button class="btn btn-primary">▶ Lecture</button>
+          <button class="btn btn-secondary">ℹ Plus d'infos</button>
+          <button class="btn btn-outline">+ Ma Liste</button>
         </div>
+      </div>
+    </section>
 
-        <nav class="main-nav" aria-label="Navigation principale">
-            <ul>
-                <li><a href="#" aria-current="page">Accueil</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Séries</a></li>
-                <li><a href="#">Ma Liste</a></li>
-            </ul>
-        </nav>
-
-        <div class="user-area">
-            <button class="search-toggle" aria-label="Rechercher">🔍</button>
-            
-            <form class="search-form" action="#" method="get" aria-label="Recherche de contenu">
-                <input type="search" placeholder="Titre, genre, acteur..." required minlength="2">
-                <button type="submit" style="display:none">Chercher</button>
-            </form>
-
-            <details class="profile-menu">
-                <summary>
-                    <span>Profil</span>
-                </summary>
-                <ul role="menu" aria-label="Menu du profil">
-                    <li><a href="#">Mon compte</a></li>
-                    <li><a href="#">Paramètres</a></li>
-                    <li><a href="#">Se déconnecter</a></li>
-                </ul>
-            </details>
+    <!-- TENDANCES -->
+    <section class="section" aria-labelledby="tendances-titre">
+      <div class="section-header">
+        <h2 id="tendances-titre" class="section-title">Tendances actuelles</h2>
+        <div class="section-controls">
+          <button class="section-control" aria-label="Précédent">‹</button>
+          <button class="section-control" aria-label="Suivant">›</button>
         </div>
-    </header>
+      </div>
+      <ul class="card-grid" id="grid-tendances" role="list"></ul>
+    </section>
 
-    <main id="contenu">
-        <h1 class="sr-only">StreamFlix — Accueil</h1>
-
-        <section id="hero" class="hero" aria-labelledby="hero-title" role="region">
-            <img class="hero-background" src="images/films/inception.webp" alt="Bannière du film Inception">
-            
-            <div class="hero-content">
-                <h2 id="hero-title">Inception</h2>
-                <p class="hero-description">
-                    Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de la voler.
-                </p>
-
-                <ul class="hero-meta" aria-label="Métadonnées du film Inception">
-                    <li><span>2010</span></li>
-                    <li><span>2h28</span></li>
-                    <li class="rating">
-                        <span class="rating-stars">★★★★☆</span>
-                        <span>4.5/5</span>
-                    </li>
-                    <li><span>Sci-Fi, Thriller</span></li>
-                </ul>
-
-                <div class="hero-actions" aria-label="Actions principales">
-                    <button class="btn btn-primary">▶ Lecture</button>
-                    <button class="btn btn-secondary">ℹ Plus d'infos</button>
-                    <button class="btn btn-outline">+ Ma Liste</button>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="section" aria-labelledby="tendances-titre">
-            <div class="section-header">
-                <h2 id="tendances-titre" class="section-title">Tendances actuelles</h2>
-                <div class="section-controls">
-                    <button class="section-control" aria-label="Précédent">‹</button>
-                    <button class="section-control" aria-label="Suivant">›</button>
-                </div>
-            </div>
-            
-            <ul class="card-grid" role="list">
-                <li>
-                    <article class="card" aria-labelledby="dark-knight-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/darknight.webp" alt="Affiche de The Dark Knight">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder The Dark Knight">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="dark-knight-title">The Dark Knight</h3>
-                            <div class="card-meta">
-                                <span>2008</span>
-                                <span class="card-rating">★ 4.8/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card" aria-labelledby="interstellar-title-1">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/Interstellar_film_poster.jpg" alt="Affiche de Interstellar">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder Interstellar">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="interstellar-title-1">Interstellar</h3>
-                            <div class="card-meta">
-                                <span>2014</span>
-                                <span class="card-rating">★ 4.7/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card" aria-labelledby="pulp-fiction-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/pulp_fiction.jpg" alt="Affiche de Pulp Fiction">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder Pulp Fiction">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="pulp-fiction-title">Pulp Fiction</h3>
-                            <div class="card-meta">
-                                <span>1994</span>
-                                <span class="card-rating">★ 4.6/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card" aria-labelledby="matrix-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/matrix.jpeg" alt="Affiche de The Matrix">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder The Matrix">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="matrix-title">The Matrix</h3>
-                            <div class="card-meta">
-                                <span>1999</span>
-                                <span class="card-rating">★ 4.5/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card" aria-labelledby="forrest-gump-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/forrest_gump.jpg" alt="Affiche de Forrest Gump">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder Forrest Gump">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="forrest-gump-title">Forrest Gump</h3>
-                            <div class="card-meta">
-                                <span>1994</span>
-                                <span class="card-rating">★ 4.4/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </section>
-
-        <section class="section" aria-labelledby="reco-titre">
-            <div class="section-header">
-                <h2 id="reco-titre" class="section-title">Recommandés pour vous</h2>
-                <div class="section-controls">
-                    <button class="section-control" aria-label="Précédent">‹</button>
-                    <button class="section-control" aria-label="Suivant">›</button>
-                </div>
-            </div>
-            
-            <ul class="card-grid" role="list">
-                <li>
-                    <article class="card" aria-labelledby="inception-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="images/films/inception.webp" alt="Affiche de Inception">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder Inception">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="inception-title">Inception</h3>
-                            <div class="card-meta">
-                                <span>2010</span>
-                                <span class="card-rating">★ 4.5/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </section>
-
-        <section class="section" aria-labelledby="nouveautes-titre">
-            <div class="section-header">
-                <h2 id="nouveautes-titre" class="section-title">Nouveautés</h2>
-                <div class="section-controls">
-                    <button class="section-control" aria-label="Précédent">‹</button>
-                    <button class="section-control" aria-label="Suivant">›</button>
-                </div>
-            </div>
-            
-            <ul class="card-grid" role="list">
-                <li>
-                    <article class="card" aria-labelledby="dune-title">
-                        <a class="card-link" href="#">
-                            <img class="card-image" src="https://source.unsplash.com/random/300x450/?movie,sand" alt="Affiche de Dune">
-                            <div class="card-overlay">
-                                <button class="card-play" aria-label="Regarder Dune">▶</button>
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <h3 id="dune-title">Dune: Part Two</h3>
-                            <div class="card-meta">
-                                <span>2024</span>
-                                <span class="card-rating">★ 4.6/5</span>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <footer class="site-footer" aria-labelledby="footer-title">
-        <h2 id="footer-title" class="sr-only">Pied de page</h2>
-
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Navigation</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Nouveautés</a></li>
-                    <li><a href="#">Ma Liste</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Aide & Support</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Centre d'aide</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Légal</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Conditions d'utilisation</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px; font-size: 14px;">
-                    Recevez les dernières actualités et recommandations.
-                </p>
-                <form class="newsletter-form" action="#" method="post">
-                    <input type="email" placeholder="Votre adresse e-mail" required>
-                    <div class="newsletter-checkbox">
-                        <input type="checkbox" id="consent" required>
-                        <label for="consent">J'accepte de recevoir des e-mails de StreamFlix</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
-                </form>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook">f</a>
-                    <a href="#" class="social-link" aria-label="Twitter">t</a>
-                    <a href="#" class="social-link" aria-label="Instagram">i</a>
-                    <a href="#" class="social-link" aria-label="YouTube">y</a>
-                </div>
-            </div>
+    <!-- RECOMMANDÉS -->
+    <section class="section" aria-labelledby="reco-titre">
+      <div class="section-header">
+        <h2 id="reco-titre" class="section-title">Recommandés pour vous</h2>
+        <div class="section-controls">
+          <button class="section-control" aria-label="Précédent">‹</button>
+          <button class="section-control" aria-label="Suivant">›</button>
         </div>
+      </div>
+      <ul class="card-grid" id="grid-recommandes" role="list"></ul>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 StreamFlix. Tous droits réservés.</p>
-            <div class="footer-bottom-links">
-                <a href="#">Confidentialité</a>
-                <a href="#">Cookies</a>
-                <a href="#">Mentions légales</a>
-            </div>
+    <!-- NOUVEAUTÉS -->
+    <section class="section" aria-labelledby="nouveautes-titre">
+      <div class="section-header">
+        <h2 id="nouveautes-titre" class="section-title">Nouveautés</h2>
+        <div class="section-controls">
+          <button class="section-control" aria-label="Précédent">‹</button>
+          <button class="section-control" aria-label="Suivant">›</button>
         </div>
-    </footer>
+      </div>
+      <ul class="card-grid" id="grid-nouveautes" role="list"></ul>
+    </section>
+  </main>
 
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <h2 id="footer-title" class="sr-only">Pied de page</h2>
+
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Films</a></li>
+          <li><a href="#">Nouveautés</a></li>
+          <li><a href="#">Ma Liste</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Aide & Support</h3>
+        <ul class="footer-links">
+          <li><a href="#">Centre d'aide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Légal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Newsletter</h3>
+        <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px; font-size: 14px;">
+          Recevez les dernières actualités et recommandations.
+        </p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" placeholder="Votre adresse e-mail" required />
+          <div class="newsletter-checkbox">
+            <input type="checkbox" id="consent" required />
+            <label for="consent">J'accepte de recevoir des e-mails de StreamFlix</label>
+          </div>
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Twitter">t</a>
+          <a href="#" class="social-link" aria-label="Instagram">i</a>
+          <a href="#" class="social-link" aria-label="YouTube">y</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 StreamFlix. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
